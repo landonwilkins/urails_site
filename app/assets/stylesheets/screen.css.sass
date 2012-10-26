@@ -1,2 +1,18 @@
 @import compass/reset
 @import compass/css3
+
+@import partials/constants
+@import partials/colors
+@import partials/typography
+@import partials/sprites
+
+body
+  font-family: $sans
+  font-size: $font-size
+  line-height: $line-height
+
+#container
+  max-width: $width
+  margin: 0 auto
+
+  @import segments/header

@@ -1,0 +1,38 @@
+#header
+  margin-top: 10px
+  position: relative
+  height: 60px
+  border-bottom: 1px solid $crimson
+  h1#logo
+    position: absolute
+    a
+      text-decoration: none
+      font-weight: bold
+      color: $crimson
+      display: inline-block
+      padding:
+        left: 50px
+      height: 48px
+      font-size: 58px
+      line-height: 50px
+      background: image-url('icons/logo_48.png') no-repeat center left
+  nav
+    position: absolute
+    bottom: 17px
+    display: inline-block
+    left: 250px
+
+    li
+      display: inline-block
+      color: lighten($crimson, 5%)
+      font-weight: 300
+      font-size: 24px
+      text-decoration: none
+      margin: 0 10px
+
+      a
+        color: darken($crimson, 10%)
+        text-decoration: none
+
+        &:hover
+          color: $crimson
