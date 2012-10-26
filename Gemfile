@@ -1,3 +1,4 @@
+ruby '1.9.3'
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
@@ -11,6 +12,7 @@ gem 'sqlite3'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'compass-rails'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
@@ -20,7 +22,29 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# Template engines
+gem 'haml'
+gem 'redcarpet'
+gem 'liquid'
+
+# Javascript
 gem 'jquery-rails'
+
+
+# Testing
+gem 'rspec-rails', group: [:test, :development]
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'guard-rspec'
+  gem 'rb-fsevent'
+end
+
+# Developer tools
+gem 'pry'
+gem 'pry-doc'
+gem 'pry-rails'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
