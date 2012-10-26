@@ -1,0 +1,5 @@
+%article.blogpost
+  %header
+    %h1= link_to smarten(blogpost.title), blogpost
+    = pretty_time blogpost.date
+  %section.content= format blogpost.summary

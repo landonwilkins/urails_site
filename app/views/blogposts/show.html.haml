@@ -1,0 +1,8 @@
+%article.post
+  %header
+    %h1= link_to smarten(@blogpost.title), @blogpost
+    = pretty_time @blogpost.date
+  %section.content= format @blogpost.body
+  %footer
+    = link_to "&laquo; #{@blogpost.older.title}".html_safe, @blogpost.older, class: 'older' if @blogpost.older.present?
+    = link_to "#{@blogpost.newer.title} &raquo;".html_safe, @blogpost.newer, class: 'newer' if @blogpost.newer.present?
