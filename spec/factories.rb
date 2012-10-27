@@ -7,5 +7,8 @@ FactoryGirl.define do
       published true
     end
   end
-
+  factory :article do
+    sequence(:title) {|n|"Article##{n}"}
+    body "This is the article summary\n<!--more-->\nThis is the rest of the article"
+  end
 end
