@@ -1,5 +1,7 @@
 UrailsSite::Application.routes.draw do
 
+  resources :articles
+
   root to:"blogposts#index"
 
   resources :blogposts
