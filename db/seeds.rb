@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Blogpost.create.tap do |bp|
-  bp.title = "A test blogpost"
-  bp.body = "This is a post of awesome
+Blogpost.create({
+  title: "A test blogpost",
+  body: "This is a post of awesome
 
 <!--more-->
 
@@ -40,14 +40,13 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ```ruby
 puts('Ruby is better than everything!')
-```"
-  published = true
-end.save!
+```",
+  published: true
+  })
 
-Article.create.tap do |a|
-  a.title = "A new article"
-
-  a.body = "This is a article of awesome
+Article.create({
+  title: "A new article",
+  body: "This is a article of awesome
 <!--more-->
 # Heading 1
 ## Heading 2
@@ -73,4 +72,4 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ```ruby
 puts('Ruby is better than everything!')
 ```"
-end
+})
