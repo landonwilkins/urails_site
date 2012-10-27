@@ -37,13 +37,18 @@ gem 'friendly_id'
 # Testing
 gem 'rspec-rails', group: [:test, :development]
 
-group :test do
-  gem 'factory_girl_rails'
+group :development do
+  gem 'ruby_gntp'
   gem 'guard-rspec'
   gem 'rb-fsevent'
+
+end
+group :test do
+  gem 'factory_girl_rails'
 end
 
 # Developer tools
+# These arent in a developer block because they replace IRB with a more functional shell. Good for heroku
 gem 'pry'
 gem 'pry-doc'
 gem 'pry-rails'

@@ -132,6 +132,7 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.11.0)
+    ruby_gntp (0.3.4)
     sass (3.2.1)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -173,6 +174,7 @@ DEPENDENCIES
   rb-fsevent
   redcarpet
   rspec-rails
+  ruby_gntp
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
