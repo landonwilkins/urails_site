@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121027170140) do
+ActiveRecord::Schema.define(:version => 20121027171317) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(:version => 20121027170140) do
     t.text     "excerpt"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "slug"
   end
+
+  add_index "articles", ["slug"], :name => "index_articles_on_slug"
 
   create_table "blogposts", :force => true do |t|
     t.string   "title"
@@ -30,5 +33,16 @@ ActiveRecord::Schema.define(:version => 20121027170140) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "friendly_id_slugs", :force => true do |t|
+    t.string   "slug",                         :null => false
+    t.integer  "sluggable_id",                 :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
+  add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
 end

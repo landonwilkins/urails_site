@@ -30,6 +30,9 @@ gem 'liquid'
 # Javascript
 gem 'jquery-rails'
 
+# Urls
+gem 'friendly_id'
+
 
 # Testing
 gem 'rspec-rails', group: [:test, :development]
