@@ -11,4 +11,9 @@ FactoryGirl.define do
     sequence(:title) {|n|"Article##{n}"}
     body "This is the article summary\n<!--more-->\nThis is the rest of the article"
   end
+  factory :page do
+    sequence(:name) {|n| "Page##{n}"}
+    sequence(:permalink) {|n| "Page#{n}"}
+    content "This is a page!."
+  end
 end
