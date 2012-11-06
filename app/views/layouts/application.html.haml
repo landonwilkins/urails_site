@@ -2,7 +2,6 @@
 %head
   %title= ['Urails', yield(:page_title)].reject(&:empty?).compact.join(': ').html_safe
   = stylesheet_link_tag "application", media: "all"
-  = stylesheet_link_tag "print", media: "print"
   = csrf_meta_tags
 %body
   #container
