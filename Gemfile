@@ -22,6 +22,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# Admin
+gem 'devise'
+gem 'activeadmin'
+
 # Template engines
 gem 'haml'
 gem 'redcarpet'
