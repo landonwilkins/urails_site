@@ -1,11 +1,11 @@
 module ApplicationHelper
   class CustomHtml < Redcarpet::Render::SmartyHTML
-    # def block_code(code, language)
-    #   sha = Digest::SHA1.hexdigest(code)
-    #   Rails.cache.fetch ["code", language, sha].join('-') do
-    #     Pygments.highlight(code, lexer: language, options: {linenos: 'table'}) + ">"
-    #   end
-    # end
+    def block_code(code, language)
+      sha = Digest::SHA1.hexdigest(code)
+      Rails.cache.fetch ["code", language, sha].join('-') do
+        Pygments.highlight(code, lexer: language, options: {linenos: 'table'}) + ">"
+      end
+    end
   end
 
   def format text

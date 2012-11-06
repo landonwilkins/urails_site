@@ -26,6 +26,7 @@ end
 gem 'haml'
 gem 'redcarpet'
 gem 'liquid'
+gem 'pygments.rb'
 
 # Javascript
 gem 'jquery-rails'
