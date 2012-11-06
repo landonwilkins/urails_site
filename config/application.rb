@@ -62,5 +62,7 @@ module UrailsSite
     # Speed up compilation
     config.assets.initialize_on_precompile = false
 
+    # ActiveAdmin assets
+    config.assets.precompile += ['active_admin.css', 'active_admin/print.css', 'active_admin.js']
   end
 end
