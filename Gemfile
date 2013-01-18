@@ -28,6 +28,10 @@ group :assets do
 end
 gem 'compass-rails'
 
+# Auth and permissions
+gem 'devise'
+gem 'cancan'
+
 # Template engines
 gem 'slim'
 gem 'slim-rails'
