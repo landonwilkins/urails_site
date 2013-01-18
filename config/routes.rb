@@ -1,4 +1,7 @@
 UrailsSite::Application.routes.draw do
+  resources :announcements
+
+
   resources :pages
   resources :articles
   resources :blogposts
