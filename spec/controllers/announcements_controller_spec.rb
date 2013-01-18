@@ -36,7 +36,7 @@ describe AnnouncementsController do
 
   describe "GET index" do
     it "assigns all announcements as @announcements" do
-      announcement = Announcement.create! valid_attributes
+      announcement = create :announcement
       get :index, {}, valid_session
       assigns(:announcements).should eq([announcement])
     end
@@ -44,7 +44,7 @@ describe AnnouncementsController do
 
   describe "GET show" do
     it "assigns the requested announcement as @announcement" do
-      announcement = Announcement.create! valid_attributes
+      announcement = create :announcement
       get :show, {:id => announcement.to_param}, valid_session
       assigns(:announcement).should eq(announcement)
     end
@@ -59,7 +59,7 @@ describe AnnouncementsController do
 
   describe "GET edit" do
     it "assigns the requested announcement as @announcement" do
-      announcement = Announcement.create! valid_attributes
+      announcement = create :announcement
       get :edit, {:id => announcement.to_param}, valid_session
       assigns(:announcement).should eq(announcement)
     end
@@ -105,7 +105,7 @@ describe AnnouncementsController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested announcement" do
-        announcement = Announcement.create! valid_attributes
+        announcement = create :announcement
         # Assuming there are no other announcements in the database, this
         # specifies that the Announcement created on the previous line
         # receives the :update_attributes message with whatever params are
@@ -115,13 +115,13 @@ describe AnnouncementsController do
       end
 
       it "assigns the requested announcement as @announcement" do
-        announcement = Announcement.create! valid_attributes
+        announcement = create :announcement
         put :update, {:id => announcement.to_param, :announcement => valid_attributes}, valid_session
         assigns(:announcement).should eq(announcement)
       end
 
       it "redirects to the announcement" do
-        announcement = Announcement.create! valid_attributes
+        announcement = create :announcement
         put :update, {:id => announcement.to_param, :announcement => valid_attributes}, valid_session
         response.should redirect_to(announcement)
       end
@@ -129,7 +129,7 @@ describe AnnouncementsController do
 
     describe "with invalid params" do
       it "assigns the announcement as @announcement" do
-        announcement = Announcement.create! valid_attributes
+        announcement = create :announcement
         # Trigger the behavior that occurs when invalid params are submitted
         Announcement.any_instance.stub(:save).and_return(false)
         put :update, {:id => announcement.to_param, :announcement => { "subject" => "invalid value" }}, valid_session
@@ -137,7 +137,7 @@ describe AnnouncementsController do
       end
 
       it "re-renders the 'edit' template" do
-        announcement = Announcement.create! valid_attributes
+        announcement = create :announcement
         # Trigger the behavior that occurs when invalid params are submitted
         Announcement.any_instance.stub(:save).and_return(false)
         put :update, {:id => announcement.to_param, :announcement => { "subject" => "invalid value" }}, valid_session
@@ -148,14 +148,14 @@ describe AnnouncementsController do
 
   describe "DELETE destroy" do
     it "destroys the requested announcement" do
-      announcement = Announcement.create! valid_attributes
+      announcement = create :announcement
       expect {
         delete :destroy, {:id => announcement.to_param}, valid_session
       }.to change(Announcement, :count).by(-1)
     end
 
     it "redirects to the announcements list" do
-      announcement = Announcement.create! valid_attributes
+      announcement = create :announcement
       delete :destroy, {:id => announcement.to_param}, valid_session
       response.should redirect_to(announcements_url)
     end

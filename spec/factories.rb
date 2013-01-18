@@ -16,4 +16,8 @@ FactoryGirl.define do
     sequence(:permalink) {|n| "Page#{n}"}
     content "This is a page!."
   end
+  factory :announcement do
+    sequence(:subject) {|n| "Announcement##{n}"}
+    body "This is an announcement body"
+  end
 end
