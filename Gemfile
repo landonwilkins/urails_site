@@ -28,10 +28,6 @@ group :assets do
 end
 gem 'compass-rails'
 
-# Admin
-gem 'devise'
-gem 'activeadmin'
-
 # Template engines
 gem 'haml'
 gem 'redcarpet'
