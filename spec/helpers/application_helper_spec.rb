@@ -24,11 +24,4 @@ describe ApplicationHelper do
       format("You're don't we're \"Hello world\"").should == "<p>You&#39;re don&#39;t we&#39;re &ldquo;Hello world&rdquo;</p>\n"
     end
   end
-
-  describe '#pretty_time' do
-    it 'generates a nice timestamp tag' do
-      time = Time.parse("Aug 1, 2001")
-      pretty_time(time).should == '<time class="icon-time" datetime="2001-08-01T00:00:00-06:00" title="Wednesday, August 1, 2001 - 12:00 AM MDT">about 11 years ago</time>'
-    end
-  end
 end
