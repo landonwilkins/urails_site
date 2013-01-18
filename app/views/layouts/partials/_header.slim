@@ -1,0 +1,7 @@
+h1#logo
+  = link_to 'URails', :root
+nav
+  ul
+    li=link_to_unless_current 'Blog', :root
+    li=link_to_unless_current 'Articles', :articles
+    li=link_to_unless_current 'About', page_path("about")

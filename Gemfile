@@ -29,7 +29,8 @@ end
 gem 'compass-rails'
 
 # Template engines
-gem 'haml'
+gem 'slim'
+gem 'slim-rails'
 gem 'redcarpet'
 gem 'liquid'
 gem 'pygments.rb'

@@ -1,0 +1,5 @@
+article.article
+  header
+    h1= link_to smarten(@article.title), @article
+    = pretty_time @article.updated_at
+  section.content= format @article.body
