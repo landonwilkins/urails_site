@@ -8,6 +8,12 @@ body
     header#header
       = render 'layouts/partials/header'
     section#content
+      - if flash[:notice]
+        p.notice= flash[:notice]
+      - if flash[:error]
+        p.error= flash[:error]
+      - if flash[:alert]
+        p.alert= flash[:alert]
       = yield
     footer#footer
       = render 'layouts/partials/footer'

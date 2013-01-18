@@ -15,12 +15,30 @@ body
   max-width: $width
   margin: 0 auto
 
-  @import segments/header
+// Flash Messages
+%flashes
+  color: black
+  padding: 5px
+  margin: 10px 0
+.notice
+  @extend %flashes
+  background: lighten($green, 60%)
+  border: 1px solid $green
+.error
+  @extend %flashes
+  background: lighten($red, 50%)
+  border: 1px solid $red
+.alert
+  @extend %flashes
+  background: lighten($orange, 40%)
+  border: 1px solid $orange
 
-  @import segments/footer
+@import segments/header
 
-  @import segments/blogpost
-  @import segments/article
-  @import segments/page
+@import segments/footer
 
-  @import partials/code
+@import segments/blogpost
+@import segments/article
+@import segments/page
+
+@import partials/code
