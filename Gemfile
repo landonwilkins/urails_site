@@ -61,9 +61,11 @@ end
 
 # Developer tools
 # These arent in a developer block because they replace IRB with a more functional shell. Good for heroku
-gem 'pry'
-gem 'pry-doc'
-gem 'pry-rails'
+group :development, :production do
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-rails'
+end
 
 
 # To use ActiveModel has_secure_password
