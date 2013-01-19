@@ -53,6 +53,8 @@ group :development do
   gem 'ruby_gntp'
   gem 'guard-rspec'
   gem 'rb-fsevent'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 
 end
 group :test do
