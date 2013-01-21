@@ -31,6 +31,7 @@ gem 'compass-rails'
 # Auth and permissions
 gem 'devise'
 gem 'cancan'
+gem 'omniauth-github'
 
 # Template engines
 gem 'slim'
