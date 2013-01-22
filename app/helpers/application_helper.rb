@@ -27,12 +27,18 @@ module ApplicationHelper
 
     render = CustomHtml.new(render_options)
     markdown = Redcarpet::Markdown.new(render, options)
-    markdown.render(Liquid::Template.parse(text).render).html_safe
+
+    output = text.gsub(/(^`{3}.*?^`{3})/m, "{% raw %}\n\\1\n{% endraw %}")
+    output = Liquid::Template.parse(output).render
+    output = markdown.render(output)
+    output.html_safe
   end
+
   def smarten text
     smarty = Redcarpet::Render::SmartyPants
     smarty.render(text).html_safe
   end
+
   def pretty_time timestamp
     return "unknown" if timestamp.nil?
      time_tag timestamp, time_ago_in_words(timestamp) + (timestamp.future? ? ' in the future': ' ago'), title: timestamp.strftime('%A, %B %-d, %Y - %-l:%M %p %Z'), class: ['icon-time']
