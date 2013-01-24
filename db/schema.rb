@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130121001020) do
+ActiveRecord::Schema.define(:version => 20130124204223) do
 
   create_table "announcements", :force => true do |t|
     t.string   "subject"
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(:version => 20130121001020) do
     t.string   "homepage"
     t.string   "realname"
     t.boolean  "oauthed",                :default => false
+    t.boolean  "announcement_sub",       :default => true
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
