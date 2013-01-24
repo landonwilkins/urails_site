@@ -36,6 +36,7 @@ gem 'omniauth-github'
 # Template engines
 gem 'slim'
 gem 'slim-rails'
+gem 'formtastic'
 gem 'redcarpet'
 gem 'liquid'
 gem 'pygments.rb'
