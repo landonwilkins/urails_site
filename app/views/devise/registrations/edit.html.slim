@@ -1,0 +1,24 @@
+h2
+  ' Edit
+  = resource_name.to_s.humanize
+
+= semantic_form_for resource, as: resource_name, url: registration_path(resource_name), html: {method: :put} do |f|
+  = devise_error_messages!
+
+  = f.inputs do
+    = f.input :email
+    = f.input :announcement_sub, label: "Subscribe to Announcements"
+  = f.inputs name: "Passwords" do
+    = f.input :password, hint: "Leave blank if you don't want to change it"
+    = f.input :password_confirmation
+
+    = f.input :current_password, hint: "We need your current password to confirm changes"
+  = f.actions do
+    = f.action :submit, label: "Update"
+
+  h3 Cancel my account
+  p
+    ' Unhappy?
+    = link_to "Cancel my account", registration_path(resource_name), :confirm => 'Are you sure?', :method => :delete
+
+  = link_to "Back", :back
