@@ -1,0 +1,4 @@
+/* This is used in the mailer. Its applied via the roadie gem
+ *= require_self
+ *= require mail.css.sass
+ */
