@@ -64,5 +64,10 @@ module UrailsSite
 
     # ActiveAdmin assets
     config.assets.precompile += ['active_admin.css', 'active_admin/print.css', 'active_admin.js']
+
+    # Custom mailer templates
+    config.to_prepare do
+      Devise::Mailer.layout "mail"
+    end
   end
 end
