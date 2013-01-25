@@ -44,6 +44,8 @@ class AnnouncementsController < ApplicationController
 
     respond_to do |format|
       if @announcement.save
+        # Send announcement to users that are subscribed to announcments
+        AnnouncmentMailer.announce(@announcement).deliver
         format.html { redirect_to @announcement, notice: 'Announcement was successfully created.' }
         format.json { render json: @announcement, status: :created, location: @announcement }
       else
