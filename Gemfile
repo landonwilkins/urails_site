@@ -41,6 +41,9 @@ gem 'redcarpet'
 gem 'liquid'
 gem 'pygments.rb'
 
+# Email stuff
+gem 'roadie'
+
 # Javascript
 gem 'jquery-rails'
 
